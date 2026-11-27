@@ -186,9 +186,9 @@ export const createProduct = async (req, res) => {
           intro_by, \`register\`, certificate, ec_number, formula, molecular_weight,
           product_status, product_img, product_img_alt,
           mechanism_of_action, indication,
-          meta_title, meta_keyword, meta_description, meta_schema, meta_canonical,
+          meta_title, meta_keyword, meta_description, meta_schema, meta_canonical, short_name, other_name, 
           status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           productName,
           slug,
@@ -213,6 +213,8 @@ export const createProduct = async (req, res) => {
           clean(body.meta_schema),
           clean(body.meta_canonical),
           status,
+          clean(body.short_name),
+          clean(body.other_name),
         ]
       );
     const productId = result.insertId;
@@ -312,7 +314,7 @@ export const updateProduct = async (req, res) => {
          formula = ?, molecular_weight = ?, product_status = ?, product_img = ?,
          product_img_alt = ?, mechanism_of_action = ?, indication = ?,
          meta_title = ?, meta_keyword = ?, meta_description = ?, meta_schema = ?,
-         meta_canonical = ?, status = ?
+         meta_canonical = ?, short_name = ?, other_name = ?, status = ?
        WHERE id = ?`,
       [
         productName,
@@ -337,6 +339,8 @@ export const updateProduct = async (req, res) => {
         clean(body.meta_description),
         clean(body.meta_schema),
         clean(body.meta_canonical),
+        clean(body.short_name),
+        clean(body.other_name),
         status,
         id,
       ]

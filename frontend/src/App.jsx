@@ -22,20 +22,19 @@ function App() {
         <Route path="/categories/add" element={<AddCategory />} />
         <Route path="/categories/edit/:id" element={<EditCategory />} />
         {/* dosage form */}
-       <Route path="/dosage-forms" element={<DosageList />} />
-       <Route path="/dosage-forms/add" element={<AddDosage />} />
-       <Route path="/dosage-forms/edit/:id" element={<EditDosage />} />
-       {/* product pages */}
-      <Route path="/products" element={<ProductList />} />
-      <Route path="/products/view/:id" element={<ViewProduct />} />
-      <Route path="/products/add" element={<AddProduct />} />
-      <Route path="/products/edit/:id" element={<EditProduct />} />
-
-        <Route
-          path="*"
-          element={<p className="text-gray-500">Page coming soon</p>}
-        />
-      </Route>
+        <Route path="/dosage-forms" element={<DosageList />} />
+        <Route path="/dosage-forms/add" element={<AddDosage />} />
+        <Route path="/dosage-forms/edit/:id" element={<EditDosage />} />
+        {/* product pages */}
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/view/:id" element={<ViewProduct />} />
+        <Route path="/products/add" element={<AddProduct />} />
+        <Route path="/products/edit/:id" element={<EditProduct />} />
+          <Route
+            path="*"
+            element={<p className="text-gray-500">Page coming soon</p>}
+          />
+        </Route>
     </Routes>
   );
 }

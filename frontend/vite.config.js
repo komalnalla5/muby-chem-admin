@@ -12,3 +12,5 @@ export default defineConfig({
 // http://localhost:5002/api/products?page=1&limit=10 //for api testing backend
 // npm run dev // to run on mubychemadmin.in\frontend path
 // open main folder in vs code not seprate
+
+// http://localhost:5174/ //this is for website link

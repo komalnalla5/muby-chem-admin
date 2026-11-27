@@ -31,6 +31,8 @@ const emptyForm = {
   meta_description: "",
   meta_schema: "",
   meta_canonical: "",
+  short_name:"",
+  other_name:"",
 };
 
 // label input display from here
@@ -119,7 +121,7 @@ function AddProduct() {
     setErrors({});
     if (!form.product_name.trim()) return setErrors({ product_name: "Product name is required" });
     if (!form.slug.trim())         return setErrors({ slug: "Product slug is required" });
-    if (!form.grade.trim())        return setErrors({ grade: "Grade is required" });
+    // if (!form.grade.trim())        return setErrors({ grade: "Grade is required" });
     if (!form.cas_no.trim())       return setErrors({ cas_no: "CAS number is required" });
     if (!form.intro_by.trim())     return setErrors({ intro_by: "Intro BY is required" });
     if (!form.category_ids.length) return setErrors({ category_ids: "Please select at least one category" });
@@ -195,7 +197,8 @@ function AddProduct() {
                 className={inputClass(errors.slug)}
               />
             </Field> 
-            <Field label="Grade" required error={errors.grade}>
+            {/* required error={errors.grade} */}
+            <Field label="Grade">
               <input
                 type="text"
                 name="grade"
@@ -245,6 +248,7 @@ function AddProduct() {
                 className={inputClass(false)}
               />
             </Field>
+            {/* work komal */}
             <Field label="Therapeutic Category">
               <input
                 type="text"
@@ -295,6 +299,28 @@ function AddProduct() {
                 className={inputClass(false)}
               />
             </Field>
+            {/* komal nov27*/}
+             <Field label="Short Name">
+              <input
+                type="text"
+                name="short_name"
+                value={form.short_name}
+                placeholder="e.g. Tetrahydrate"
+                onChange={handleChange}
+                className={inputClass(false)}
+              />
+            </Field>
+            <Field label="Other Name">
+              <input
+                type="text"
+                name="other_name"
+                value={form.other_name}
+                placeholder="e.g. Retinol"
+                onChange={handleChange}
+                className={inputClass(false)}
+              />
+            </Field>
+           {/* komal end */}
           </div>
         </div>
         {/* Classification */}
